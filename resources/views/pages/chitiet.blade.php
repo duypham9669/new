@@ -11,7 +11,7 @@
                 <h1>{{$tintuc->TieuDe}}</h1>
                 <!-- Author -->
                 <p class="lead">
-                    by <a>Hieu La</a>
+                    by <a>HL</a>
                 </p>
                 <!-- Preview Image -->
                 <div class="text-center">
@@ -23,7 +23,8 @@
 
                 <!-- Post Content -->
                 <p class="lead">{{$tintuc->TomTat}}</p>
-                <p>{{$tintuc->NoiDung}}</p>
+                {!!$tintuc->NoiDung!!}
+                <p></p>
 
                 <hr>
 
@@ -70,7 +71,7 @@
                                 </a>
                             </div>
                             <div class="col-md-7">
-                                <a href="chitiet/{{$lienquan[$i]['id']}}/{{$lienquan[$i]['TieuDeKhongDau']}}"><b>{{$lienquan[$i]['TieuDe']}}</b></a>
+                                <a href="chitiet/{{$lienquan[$i]['id']}}/{{$lienquan[$i]['TieuDe']}}"><b>{{$lienquan[$i]['TieuDe']}}</b></a>
                             </div>
                             <div class="break"></div>
                         </div>
@@ -91,7 +92,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-7">
-                                    <a href="chitiet/{{$noibat[$i]['id']}}/{{$noibat[$i]['TieuDeKhongDau']}}"><b>{{$noibat[$i]['TieuDe']}}</b></a>
+                                    <a href="chitiet/{{$noibat[$i]['id']}}/{{$noibat[$i]['TieuDe']}}"><b>{{$noibat[$i]['TieuDe']}}</b></a>
                                 </div>
                                 <div class="break"></div>
                             </div>

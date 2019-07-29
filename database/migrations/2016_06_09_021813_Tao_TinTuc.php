@@ -23,6 +23,8 @@ class TaoTinTuc extends Migration
             $table->integer('SoLuotXem')->default(0);
             $table->integer('idLoaiTin')->unsigned();
             $table->foreign('idLoaiTin')->references('id')->on('LoaiTin');
+            $table->integer('idTheLoai')->unsigned();
+            $table->foreign('idTheLoai')->references('id')->on('TheLoai');
             $table->integer('active')->default(1);
             $table->timestamps();
         });

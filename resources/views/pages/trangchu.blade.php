@@ -1,14 +1,40 @@
 @extends('layout.index')
 @section('title', 'Trang chủ')
 @section('content')
+
     <?php
-        $fontColor = "";
+
+    $myDB = new mysqli('localhost', 'root','','blog');
+    $myDB->set_charset("utf8");
+    $sql = "SELECT * from tintuc WHERE (active=1) ORDER BY id DESC LIMIT 10";
+    $sql2 = "SELECT * from tintuc WHERE (active=1) ORDER BY RAND() LIMIT 2";
+    $result =$myDB->query($sql);
+    $result2 =$myDB->query($sql2);
+
     ?>
+
+    <div class="margin-bottom" style="background: #151d28;">
+        <?php
+        while($r2=$result2->fetch_assoc()){
+            echo '<div class="col-md-6 nopadding" style="margin-bottom: 20px">';
+            echo '<div class="Danh">';
+            echo '<img src="images/tintuc/'.$r2["Hinh"].'">';
+            echo '    </div>';
+            echo '    <div class="Dchu">';
+            echo '<a style="color:white;" href="chitiet/'.$r2["id"].'/'.$r2["TieuDe"].'"><h3>'.$r2["TieuDe"].'</h3></a>';
+             echo '   </div>';
+            echo '</div>';
+
+        }
+        ?>
+            &nbsp;
+    </div>
     <!-- Page Content -->
     <div id="content" class="container">
+
         <!-- slider -->
 {{--        @include('layout.slide')--}}
-        <div class="space20"></div>
+{{--        <div class="space20"></div>--}}
         <div class="row main-left">
             @include('layout.menu')
             <div id="content" class="col-md-9">
@@ -18,18 +44,11 @@
                     </div>
                     <div id="content" class="panel-body">
                         <!-- item -->
-                        <?php
 
-                        $myDB = new mysqli('localhost', 'root','','blog');
-                        $myDB->set_charset("utf8");
-                        $sql = "SELECT * from tintuc WHERE (active=1) ORDER BY id DESC LIMIT 10";
-                        $result =$myDB->query($sql);
-
-                        ?>
                     <?php
                         while($r=$result->fetch_assoc()){
 
-                            echo'<div id="content" class="row-item row" style="background-color:'.$fontColor.'  ">';
+                            echo'<div id="content" class="row-item row">';
                             echo'<div id="content" class="col-md-12 border-right">';
                             echo '<div id="content" class="col-md-5">';
 

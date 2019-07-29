@@ -81,15 +81,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($comment as $cm)
-                        <tr class="odd gradeX" align="center">
-                            <td>{{$cm->id}}</td>
-                            <td>{{$cm->user->name}}</td>
-                            <td>{{$cm->NoiDung}}</td>
-                            <td>{{$cm->created_at}}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Are you sure to delete?')" href="admin/comment/xoa/{{$cm->id}}"> Xóa</a></td>
-                        </tr>
-                    @endforeach
+{{--                    @foreach($comment as $cm)--}}
+{{--                        <tr class="odd gradeX" align="center">--}}
+{{--                            <td>{{$cm->id}}</td>--}}
+{{--                            <td>{{$cm->user->name}}</td>--}}
+{{--                            <td>{{$cm->NoiDung}}</td>--}}
+{{--                            <td>{{$cm->created_at}}</td>--}}
+{{--                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Are you sure to delete?')" href="admin/comment/xoa/{{$cm->id}}"> Xóa</a></td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
                     </tbody>
                 </table>
             </div>

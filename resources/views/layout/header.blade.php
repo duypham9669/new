@@ -14,15 +14,21 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul  class="nav navbar-nav">
-                <li>
-                    <a href="#">Điện thoại</a>
-                </li>
-                <li>
-                    <a href="#">PC</a>
-                </li>
-                <li>
-                    <a href="#">Xe</a>
-                </li>
+                <?php
+
+                $myDB = new mysqli('localhost', 'root','','blog');
+                $myDB->set_charset("utf8");
+                $sql = "SELECT * from theloai WHERE (active=1) ORDER BY id";
+                $result =$myDB->query($sql);
+
+                ?>
+                <?php
+                while($r=$result->fetch_assoc()){
+                    echo '<li>';
+                    echo '<a href="theloai/'.$r["id"].'/'.$r["Ten"].'">'.$r["Ten"].'</a>';
+                     echo '</li>';
+                }
+                ?>
             </ul>
 
             <form class="navbar-form navbar-left" role="search" method="get" action="timkiem" style="margin-top: 10px">

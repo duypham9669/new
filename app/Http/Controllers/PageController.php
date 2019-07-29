@@ -47,6 +47,14 @@ class PageController extends Controller
             ])->orderBy('NoiBat', 'desc')->paginate(5);
         return view('pages.loaitin')->with(['loaitin' => $loaitin, 'tintuc' => $tintuc]);
     }
+    public function getTheloai($id){
+        $theloai = TheLoai::find($id);
+        $tintuc = TinTuc::where([
+            ['idTheLoai', $id],
+            ['active', 1],
+        ])->orderBy('NoiBat', 'desc')->paginate(5);
+        return view('pages.theloai')->with(['theloai' => $theloai, 'tintuc' => $tintuc]);
+    }
 
     public function getChiTiet($id){
         $tintuc = TinTuc::find($id);

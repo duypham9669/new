@@ -42,6 +42,7 @@ class TintucController extends Controller
         );
         $tintuc = new TinTuc();
         $tintuc->idLoaiTin = $request->loaitin;
+        $tintuc->idTheLoai = $request->theloai;
         $tintuc->TieuDe = $request->tieude;
 
         $tintuc->TomTat = $request->tomtat;
@@ -80,11 +81,11 @@ class TintucController extends Controller
         $theloai = TheLoai::where('active',1)->get();
         $loaitin = LoaiTin::where('active',1)->get();
         $tintuc = TinTuc::find($id);
-        $comment = Comment::where([
-            ['idTinTuc', '=', $id],
-            ['active', '=', 1],
-        ])->get();
-        return view('Admin.TinTuc.sua')->with(['tintuc' => $tintuc, 'theloai' => $theloai, 'loaitin' => $loaitin, 'comment' => $comment]);
+//        $comment = Comment::where([
+//            ['idTinTuc', '=', $id],
+//            ['active', '=', 1],
+//        ])->get();
+        return view('Admin.TinTuc.sua')->with(['tintuc' => $tintuc, 'theloai' => $theloai, 'loaitin' => $loaitin]);
     }
     public function postSua(Request $request, $id){
         $this->validate($request,
@@ -138,12 +139,12 @@ class TintucController extends Controller
         $tintuc->save();
         return redirect('admin/tintuc/sua/'.$id)->with('success', 'Sửa thành công');
     }
-
-    public function xoaComment($id){
-        $comment = Comment::find($id);
-        $comment->active = 0;
-        $comment->save();
-        $id = $comment->tintuc->id;
-        return redirect('admin/tintuc/sua/'.$id)->with('alert', 'Xóa comment thành công');
-    }
+//
+//    public function xoaComment($id){
+//        $comment = Comment::find($id);
+//        $comment->active = 0;
+//        $comment->save();
+//        $id = $comment->tintuc->id;
+//        return redirect('admin/tintuc/sua/'.$id)->with('alert', 'Xóa comment thành công');
+//    }
 }

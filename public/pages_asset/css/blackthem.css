@@ -14,6 +14,34 @@ body {
     padding-top: 20px;
    font-size: 15px;
 }
+.float-left{
+    float:left;
+}
+.container{
+    padding: 0px;
+}
+.margin-bottom{
+   margin-bottom: 40px;
+}
+.Danh{
+    padding: 0px;
+    height: 370px;
+    overflow: hidden;
+}
+.Dchu{
+    padding-top: 5px;
+    font-size: 25px;
+    background: #151d28;
+    color: white;
+    height: 80px;
+}
+.nopadding{
+    padding: 3px;
+}
+.Danh img{
+    /*height: 100%;*/
+    width: 100%;
+}
 .them{
     float: left;
     font-size: 5px;

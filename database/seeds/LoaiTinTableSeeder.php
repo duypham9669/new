@@ -13,12 +13,12 @@ class LoaiTinTableSeeder extends Seeder
     {
         //
         DB::table('LoaiTin')->insert([
-        	['idTheLoai'=>'1','Ten' => 'Giáo Dục'],
-        	['idTheLoai'=>'1','Ten' => 'Nhịp Điệu Trẻ'],
-        	['idTheLoai'=>'2','Ten' => 'Cuộc Sống Đó Đây'],
-        	['idTheLoai'=>'2','Ten' => 'Ảnh'],
-        	['idTheLoai'=>'3','Ten' => 'Mua Sắm'],
-        	['idTheLoai'=>'3','Ten' => 'Doanh Nghiệp Viết']
+        	['idTheLoai'=>'1','Ten' => 'Máy Tính Windows'],
+        	['idTheLoai'=>'1','Ten' => 'Máy Tính macOS'],
+        	['idTheLoai'=>'2','Ten' => 'Điện Thoại Android'],
+        	['idTheLoai'=>'2','Ten' => 'Điện Thoại IOS'],
+        	['idTheLoai'=>'3','Ten' => 'Xe Máy'],
+        	['idTheLoai'=>'3','Ten' => 'Ô Tô']
 
     	]);
     }

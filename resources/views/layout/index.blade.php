@@ -33,10 +33,13 @@
 
 </head>
 <body id="content">
-<div id="content">
+<div class="container" id="content">
     <?php
     $fontColor = "black";
     ?>
+
+
+
 @include('layout.header')
 @yield('content')
 @include('layout.footer')

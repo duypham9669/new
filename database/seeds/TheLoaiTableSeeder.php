@@ -13,9 +13,9 @@ class TheLoaiTableSeeder extends Seeder
     {
 
     	DB::table('TheLoai')->insert([
-        	['Ten' => 'Xã Hội'],
-        	['Ten' => 'Thế Giới'],
-        	['Ten' => 'Kinh Doanh']
+        	['Ten' => 'Máy Tính'],
+        	['Ten' => 'Điện Thoại'],
+        	['Ten' => 'Xe 360']
 
     	]);
 
