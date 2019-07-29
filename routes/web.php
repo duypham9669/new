@@ -66,8 +66,11 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminLogin'], function(){
 Route::get('trangchu', 'PageController@getTrangchu');
 //Route::get('lienhe', 'PageController@getLienhe');
 //Route::get('slide', 'PageController@getSlide');
-Route::get('loaitin/{id}/{TenKhongDau}', 'PageController@getLoaitin');
-Route::get('chitiet/{id}/{TieuDeKhongDau}', 'PageController@getChiTiet');
+Route::get('loaitin/{id}/{Ten}', 'PageController@getLoaitin');
+Route::get('theloai/{id}/{Ten}', 'PageController@getTheLoai');
+
+Route::get('chitiet/{id}/{Tieu}', 'PageController@getChiTiet');
+
 //Route::get('dangnhap', 'PageController@getDangNhap');
 //Route::post('dangnhap', 'PageController@postDangNhap');
 //Route::get('dangxuat', 'PageController@getDangXuat');
@@ -85,4 +88,6 @@ Route::get('/home', 'PageController@getTrangchu');
 Route::get('/loadmore', 'LoadMoreController@index');
 Route::post('/loadmore/load_data', 'LoadMoreController@load_data')->name('loadmore.load_data');
 Route::post('loadmore/load_loaitin','LoadMoreController@load_loaitin')->name('LoadLoaitin');
+
+Route::post('loadmore/load_theloai','LoadMoreController@load_theloai')->name('LoadTheloai');
 
